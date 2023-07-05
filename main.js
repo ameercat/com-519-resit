@@ -6,7 +6,7 @@ const Patient = require("./models/patient");
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-mongoose.connect("mongodb://localhost:27017/admin", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://amirmoghal2610:sK0Xjyu98LiUwFhz@medicaldatabase.bnxc3ea.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get("/", (req, res) => {
     res.render("index");
