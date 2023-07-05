@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Patient</title>
+</head>
+<body>
+    <h1>Delete Patient</h1>
+    <form action="/delete/<%= patient._id %>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <label for="patient">Select a patient to delete:</label>
+        <select id="patient" name="patient">
+            <% patients.forEach(patient => { %>
+                <option value="<%= patient._id %>">
+                    Patient ID: <%= patient._id %>, Age: <%= patient.age %>, Gender: <%= patient.gender %>
+                </option>
+            <% }); %>
+        </select>
+        <input type="submit" value="Delete Patient">
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

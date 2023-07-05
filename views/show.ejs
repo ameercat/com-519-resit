@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Patients</title>
+</head>
+<body>
+    <h1>Show Patients</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Cholesterol</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <% Patients.forEach(Patient => { %>
+            <tr>
+                <td><%= Patient._id %></td>
+                <td><%= Patient.age %></td>
+                <td><%= Patient.gender %></td>
+                <td><%= Patient.height %></td>
+                <td><%= Patient.weight %></td>
+                <td><%= Patient.cholesterol %></td>
+                <td>
+                    <form action="/update/<%= Patient._id %>" method="post">
+                        <input type="submit" value="Update">
+                    </form>
+                </td>
+                <td>
+                    <form action="/delete/<%= Patient._id %>" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+
+
+
+
